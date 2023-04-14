@@ -9,17 +9,17 @@ import it.hackjava.springblog.model.Author;
 public interface AuthorRepository extends JpaRepository<Author , Long> {
 
       
-    public List<Author> findByLastName(String lastname);
+    public List<Author> findByLastname(String lastname);
 
-    public List<Author> findByFirstNameNotIgnoreCase(String s);
+    public List<Author> findByFirstnameNotIgnoreCase(String s);
 
-    public List<Author> findByFirstNameEquals(String s);
+    public List<Author> findByFirstnameEquals(String s);
 
-    public List<Author> findByFirstNameContains(String s);
+    public List<Author> findByFirstnameContains(String s);
 
-    public List<Author> findByFirstNameAndLastName(String a, String b);
+    public List<Author> findByFirstnameAndLastname(String a, String b);
 
-    public List<Author> findByFirstNameOrLastName(String a, String b);
+    public List<Author> findByFirstnameOrLastname(String a, String b);
 
     
 }

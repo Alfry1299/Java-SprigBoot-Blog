@@ -74,7 +74,7 @@ class SpringBlogApplicationTests {
 		postRepository.save(p1);
 		
 		Post p2 = new Post();
-		p2.setAuthor(a1);
+		p2.setAuthor(a3);
 		p2.setTitle("Iphone 15");
 		p2.setBody("Lorem Ipsum");
 		p2.setPublishDate("20230411");
@@ -198,7 +198,7 @@ void customQuery2(){
 	assertThat(posts).hasSize(2);
 	assertThat(posts)
 	.extracting("author")
-	.extracting("firstName")
+	.extracting("firstname")
 	.contains("Alfredo" , "Alfredo");
 
 }
@@ -212,12 +212,12 @@ void customQuery3(){
 	assertThat(posts).hasSize(1);
 	assertThat(posts.get(0))
 	.extracting("author")
-	.extracting("firstName")
+	.extracting("firstname")
 	.isEqualTo("Giovanni");
 
 	assertThat(posts.get(0))
 	.extracting("author")
-	.extracting("lastName")
+	.extracting("lastname")
 	.isEqualTo("Cascone");
 
 }

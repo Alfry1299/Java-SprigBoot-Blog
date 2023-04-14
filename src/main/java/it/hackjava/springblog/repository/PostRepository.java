@@ -17,7 +17,7 @@ public interface PostRepository extends JpaRepository<Post , Long> {
     List<Post> findByAuthorFirstName(String firstName);
 
 
-    @Query("SELECT p FROM Post p WHERE p.author.firstName = :firstName AND p.author.lastName = :lastName")
+    @Query("SELECT p FROM Post p WHERE p.author.firstname = :firstName AND p.author.lastname = :lastName")
     List<Post> findByAuthorFirstNameAndLastName(@Param("lastName") String lastName, @Param("firstName") String firstName);
 
 

@@ -31,7 +31,7 @@ public class Post {
     @ManyToOne
     private Author author;
 
-    @OneToMany(mappedBy = "")
+    @OneToMany(mappedBy = "post")
     private List<Comment> comments = new ArrayList<Comment>();
 
     public Post() {
