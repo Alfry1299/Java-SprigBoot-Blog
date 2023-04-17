@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import it.hackjava.springblog.model.Author;
 import it.hackjava.springblog.repository.AuthorRepository;
+import it.hackjava.springblog.service.AuthorService;
 
 @Controller
 @RequestMapping(value = "authors") 
@@ -22,6 +23,9 @@ public class AuthorController {
     
     @Autowired
     private AuthorRepository authorRepository;
+
+    @Autowired
+    private AuthorService authorService;
 
     // @RequestMapping(value = "" , method = RequestMethod.GET)
     @GetMapping
@@ -40,5 +44,11 @@ public class AuthorController {
         authorRepository.deleteById(id);
          return "ok";
     }
+
+    @PostMapping
+    public @ResponseBody Author post(@RequestBody Author author){
+        return authorService.create(author);
+    }
+    
 
 }

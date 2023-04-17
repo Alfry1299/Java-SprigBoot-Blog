@@ -1,6 +1,7 @@
 package it.hackjava.springblog;
 
 import org.assertj.core.api.Assertions;
+import org.hibernate.jdbc.Expectation;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,8 @@ import it.hackjava.springblog.repository.AuthorRepository;
 import it.hackjava.springblog.repository.CommentRepository;
 import it.hackjava.springblog.repository.PostRepository;
 import jakarta.persistence.EntityManager;
+import jakarta.transaction.Transactional;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.ArrayList;
@@ -221,6 +224,24 @@ void customQuery3(){
 	.isEqualTo("Cascone");
 
 }
+
+
+// @Test 
+// void testTransiction(){
+
+// 	try {
+
+// 		this.transaction();
+
+// 	} catch (Exception e) {
+// 		// assertThat(postRepository.findByAuthorFirstNameAndLastName("null", "null")).hasSize(0);
+// 		assertThat(authorRepository.findByFirstnameAndLastname("null", "null")).hasSize(0);
+
+// 	}
+ 
+
+// }
+
 }
 	
 
